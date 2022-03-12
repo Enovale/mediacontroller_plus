@@ -32,13 +32,12 @@ Item {
                                             && !plasmoid.configuration.showTrackInfo
                                             && !plasmoid.configuration.showPlaybackControls)
 
-    Layout.fillWidth: isOnVertical || plasmoid.configuration.showTrackInfo
+    Layout.fillWidth: isOnVertical
     Layout.fillHeight: !isOnVertical
 
-    Layout.minimumWidth: isOnVertical ? plasmoid.width : (iconView ? 1 : 5) * PlasmaCore.Units.gridUnit
-    Layout.preferredWidth: plasmoid.configuration.showTrackInfo ? (plasmoid.configuration.minimumWidthUnits || 18) * PlasmaCore.Units.gridUnit
-                                                                : mainRow.implicitWidth
-    Layout.maximumWidth: isOnVertical ? plasmoid.width : plasmoid.configuration.maximumWidthUnits * PlasmaCore.Units.gridUnit
+    Layout.minimumWidth: isOnVertical ? plasmoid.width : mainRow.implicitWidth
+    Layout.preferredWidth: mainRow.implicitWidth
+    Layout.maximumWidth: isOnVertical ? plasmoid.width : mainRow.implicitWidth
 
     Layout.preferredHeight: isOnVertical ? mainRow.implicitHeight : plasmoid.height
 
